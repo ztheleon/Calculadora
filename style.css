@@ -1,42 +1,45 @@
 /* Styles go here */
 
+/* ----------------------- CSS Reset --------------------------------*/
 
-html body {
-  font-size: 16px;
-  background-color: #8ED193;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; /*changes the box model by ensuring that the padding and border of an element no longer increases its width.*/
 }
 
+/*The ::before selector inserts something before the content of each selected element(s).
+Use the ::after selector to insert something after the content.*/
 
+*, *::before, *::after { /*This sets the margin and padding of every HTML element to zero */
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+/* ------------------------ End CSS reset ------------------------------*/
+
+/*center the calculator on the page and give it a border and fixed width.*/
 #marco {
-  position: relative; /*Relative positioning moves an element RELATIVE to its original position.*/
-  height: 350px;
-  width: 400px;
-  background-color: #737373;
-  border: 3px solid black;
-  border-radius: 22px;
-  display:block; /*specifies the type of box used for an HTML element.*/
-}
-
-h2 {
-  position: absolute;/*is positioned relative to the nearest positioned ancestor*/
-  /*However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.*/
-  top:-15px;
-  left:70px;
-}
-
-#result {
-  text-align:right;
-  font-size:1.5rem;
-  height: 50px;
-  width: 300px;
-  border: 2px solid black;
-  border-radius: 15px;
-  display:block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   position: absolute;
-  top:35px;
-  left: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
 }
 
+/*Style the calculator screen */
+.calculator-screen {
+  width: 100%;
+   font-size: 5rem;
+   height: 80px;
+   border: none;
+   background-color: #252525;
+   color: #fff;
+   text-align: right;
+   padding-right: 20px;
+   padding-left: 10px;
+}
 
 .numbers {
   display: block;
@@ -50,7 +53,7 @@ h2 {
   background-color: white;
   border: 1px solid black;
   border-radius: 7px;
-  transition-duration: 0.4s; /*determine the speed of the "hover" effect*/  
+  transition-duration: 0.4s; /*determine the speed of the "hover" effect*/
 }
 
 /* :hover --> selector to change the style of a button when you move
@@ -62,7 +65,7 @@ the mouse over button.*/
 the mouse over button.*/
 }
 
-/*---- Numbers button Positions ------------------------*/  
+/*---- Numbers button Positions ------------------------*/
 #one {
   position: absolute;
   top:100px;
@@ -127,7 +130,7 @@ the mouse over button.*/
   display:block;
 }
 
-/*---- operations button Positions ------------------------*/  
+/*---- operations button Positions ------------------------*/
 
 #sum {
   position: absolute;
@@ -164,4 +167,3 @@ the mouse over button.*/
   top:100px;
   left:245px;
 }
-

@@ -1,0 +1,167 @@
+/* Styles go here */
+
+
+html body {
+  font-size: 16px;
+  background-color: #8ED193;
+}
+
+
+#marco {
+  position: relative; /*Relative positioning moves an element RELATIVE to its original position.*/
+  height: 350px;
+  width: 400px;
+  background-color: #737373;
+  border: 3px solid black;
+  border-radius: 22px;
+  display:block; /*specifies the type of box used for an HTML element.*/
+}
+
+h2 {
+  position: absolute;/*is positioned relative to the nearest positioned ancestor*/
+  /*However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.*/
+  top:-15px;
+  left:70px;
+}
+
+#result {
+  text-align:right;
+  font-size:1.5rem;
+  height: 50px;
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 15px;
+  display:block;
+  position: absolute;
+  top:35px;
+  left: 50px;
+}
+
+
+.numbers {
+  display: block;
+  padding: 6px 15px;
+  font-size: 1.5rem;
+  cursor: pointer; /*Mouse over the words to change the cursor*/
+  text-align: center;
+  text-decoration: none;
+  outline: none;/*An outline is a line that is drawn around elements (outside the borders) to make the element "stand out".*/
+  color: black; /*numbers color*/
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 7px;
+  transition-duration: 0.4s; /*determine the speed of the "hover" effect*/  
+}
+
+/* :hover --> selector to change the style of a button when you move
+the mouse over it.*/
+.numbers:hover {
+    background-color: #A2FAC1; /* change Background color when you move
+the mouse over button.*/
+    color: black; /*change color numbers, when you move
+the mouse over button.*/
+}
+
+/*---- Numbers button Positions ------------------------*/  
+#one {
+  position: absolute;
+  top:100px;
+  left:55px;
+}
+#two {
+  position: absolute;
+  top:100px;
+  left:120px;
+}
+#three {
+  position: absolute;
+  top:100px;
+  left:185px;
+}
+#four {
+  position: absolute;
+  top:160px;
+  left:55px;
+}
+#five {
+  position: absolute;
+  top:160px;
+  left:120px;
+}
+#six {
+  position: absolute;
+  top:160px;
+  left:185px;
+}
+#seven {
+  position: absolute;
+  top:220px;
+  left:55px;
+}
+#eigth {
+  position: absolute;
+  top:220px;
+  left:120px;
+}
+#nine {
+  position: absolute;
+  top:220px;
+  left:186px;
+}
+
+#zero {
+  position: absolute;
+  top:280px;
+  left:120px;
+}
+/*------------------------------------------------------------*/
+
+.operations {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  background-color: #83B9F7;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 0 0 0;
+  display:block;
+}
+
+/*---- operations button Positions ------------------------*/  
+
+#sum {
+  position: absolute;
+  top:100px;
+  left:303px;
+}
+
+#subtract {
+  position: absolute;
+  top:160px;
+  left:303px;
+}
+
+#multiplication {
+  position: absolute;
+  top:220px;
+  left:303px;
+}
+
+#division {
+  position: absolute;
+  top:280px;
+  left:303px;
+}
+
+#equal {
+  position: absolute;
+  top:280px;
+  left:245px;
+}
+
+#delete {
+  position: absolute;
+  top:100px;
+  left:245px;
+}
+

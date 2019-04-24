@@ -9,3 +9,7 @@ Develop_1.2: Using CSS Grid to arrange the buttons
              Defining Rows and Columns
              Space out the buttons
              Positioning the Equals Button
+Develop_1.3: Updating the display (JS)
+             Handling key presses (JS)
+             Inputting the digits (JS)
+             Handling Operators (JS)

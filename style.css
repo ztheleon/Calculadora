@@ -30,7 +30,7 @@ Use the ::after selector to insert something after the content.*/
 
 /*Style the calculator screen */
 .calculator-screen {
-  width: 100%;
+   width: 100%;
    font-size: 5rem;
    height: 80px;
    border: none;
@@ -56,8 +56,7 @@ button {
 
 /* :hover --> selector to change the style of a button when you move the mouse over it.*/
 button:hover {
-    background-color: #A2FAC1; /* change Background color when you move the mouse over button.*/
-    color: black; /*change color numbers, when you move the mouse over button.*/
+    background-color: #eaeaea; /* change Background color when you move the mouse over button.*/
 }
 
 .operator {

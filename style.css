@@ -18,7 +18,7 @@ Use the ::after selector to insert something after the content.*/
 /* ------------------------ End CSS reset ------------------------------*/
 
 /*center the calculator on the page and give it a border and fixed width.*/
-#marco {
+#calculator {
   border: 1px solid #ccc;
   border-radius: 5px;
   position: absolute;
@@ -78,8 +78,31 @@ button:hover {
   background-color: #2e86c0;
   border-color: #337cac;
   color: #fff;
+  height: 100%;
+  grid-row-start: 2;  /*Positioning button equal   = grid-row: 2 / 6;*/
+  grid-row-end: 6;    /*Positioning button equal*/
+  grid-column-start: 4; /*Positioning button equal  = grid-column: 4 / 5;*/
+  grid-column-end: 5; /*Positioning button equal*/
 }
 
 .equal-sign:hover {
   background-color: #4e9ed4;
 }
+
+/* ------------ CSS Grid ------------------*/
+.calculator-keys {
+  display: grid; /*grid container*/
+  grid-template-columns: 1fr 1fr 1fr 1fr; /*we need to place the keys in four columns of equal width.*/
+                                          /*The fr unit is a new form of measurement in CSS.
+                                          It represents a fraction of the available space in a grid container.
+                                          So 1fr means 1 part of the available space, 2fr means 2 parts, and so on.*/
+                                          /*1fr 1fr 1fr 1fr = repeat(4, 1fr);*/
+
+  grid-row-gap: 20px;                     /*add some space between the butttons == grid-gap: 20px 20px*/
+  grid-column-gap: 20px;
+  padding: 20px;
+}
+/*The direct descendants of the grid container are known as grid items(buttons).
+Each grid item takes up the full width of the grid container*/
+
+/*Defining Rows and Columns*/

@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <!-- for Internet Explorer compatibilty issues -->
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Con esto garantizamos que se vea bien en dispositivos móviles
+      A <meta> viewport element gives the browser instructions on how to
+      control the page's dimensions and scaling.-->
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="description" content="">   <!-- for Search Engines. -->
+     <meta name="author" content="">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
   </head>
 
   <body>
-    
-  <div id="marco">
-    <h2>Calculator stronger v1.0</h2>
-      <input type="number" id="result" value="0">
-    
-    <div class="buttons">
-      <button class="numbers" id="one" value="1">1</button>
-      <button class="numbers" id="two" value="2">2</button>
-      <button class="numbers" id="three" value="3">3</button>
-      <button class="numbers" id="four" value="4">4</button>
-      <button class="numbers" id="five" value="5">5</button>
-      <button class="numbers" id="six" value="6">6</button>
-      <button class="numbers" id="seven" value="7">7</button>
-      <button class="numbers" id="eigth" value="8">8</button>
-      <button class="numbers" id="nine" value="9">9</button>
-      <button class="numbers" id="zero" value="0">0</button>
-      
-      <button class="operations" id="sum" value="+">+</button>
-      <button class="operations" id="subtract" value="-">-</button>
-      <button class="operations" id="multiplication" value="*">*</button>
-      <button class="operations" id="division" value="/">/</button>
-      
-      <button class="operations" id="equal" value="=">=</button>
-      <button class="operations" id="delete" value="b">DEL</button>
-    </div>
-  </div>  
- 
-    
-  </body>
+    <div class="calculator">
+      <input type="text" class="calculator-screen" value="" disabled />
 
+      <div class="calculator-keys">
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+        <button type="button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+        <button type="button" value="0">0</button>
+
+        <button type="button" class="operator" value="+">+</button>
+        <button type="button" class="operator" value="-">-</button>
+        <button type="button" class="operator" value="*">&times;</button>
+        <button type="button" class="operator" value="/">&divide;</button>
+
+        <!--<button type="button" class="decimal" value=".">.</button> NEW FEATURE-->
+         <button type="button" class="decimal" value=".">.</button>
+        <button type="button" class="equal-sign operator" value="=">=</button>
+        <button type="button" class="all-clear" value="all-clear">DEL</button>
+      </div>
+    </div>
+  </body>
+<script src="script.js"></script>
 </html>

@@ -1,102 +1,102 @@
 // Code goes here
+const calculator = {
+  displayValue: '0',
+  firstOperand: null,
+  waitingForSecondOperand: false,
+  operator: null,
+};
 
-window.numero=0; //save the number typed.
-window.total=0; //save the result of operation.
-window.centinela=0; //indicate if the number typed is the firts one.
-window.operacion=0; //indicate the operation to make.
+function inputDigit(digit) {
+  const { displayValue, waitingForSecondOperand } = calculator;
 
-window.onload = function () { //
+  if (waitingForSecondOperand === true) {
+    calculator.displayValue = digit;
+    calculator.waitingForSecondOperand = false;
+  } else {
+    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+  }
+}
 
-  /*En la var "buttons" se almacena la referencia
-    de los botones con classname ".buttons"*/
-  var buttons = document.querySelector(".buttons");
+function inputDecimal(dot) {
+	if (calculator.waitingForSecondOperand === true) return;
 
-  buttons.addEventListener("click", function(e) {
-  var button = e.target.value; //identified the button pushed.
+  // If the `displayValue` does not contain a decimal point
+  if (!calculator.displayValue.includes(dot)) {
+    // Append the decimal point
+    calculator.displayValue += dot;
+  }
+}
 
-    switch(button) {
-      case "+":             //if the button pushed is +.
-        operaciones(numero,operacion);
-        operacion="+";
-        numero=0;
-      break;
+function handleOperator(nextOperator) {
+  const { firstOperand, displayValue, operator } = calculator
+  const inputValue = parseFloat(displayValue);
 
-      case "-":             //if the button pushed is -.
-        operaciones(numero,operacion);
-        operacion="-";
-        numero=0;
-      break;
+  if (operator && calculator.waitingForSecondOperand)  {
+    calculator.operator = nextOperator;
+    return;
+  }
 
-      case "*":             //if the button pushed is *.
-        operaciones(numero,operacion);
-        operacion="*";
-        numero=0;
-      break;
+  if (firstOperand == null) {
+    calculator.firstOperand = inputValue;
+  } else if (operator) {
+    const currentValue = firstOperand || 0;
+    const result = performCalculation[operator](currentValue, inputValue);
 
-      case "/":             //if the button pushed is /.
-        operaciones(numero,operacion);
-        operacion="/";
-        numero=0;
-      break;
+    calculator.displayValue = String(result);
+    calculator.firstOperand = result;
+  }
 
-      case "=":             //if the button pushed is =.
-         operaciones(numero,operacion);
-         operacion=0;
-      break;
+  calculator.waitingForSecondOperand = true;
+  calculator.operator = nextOperator;
+}
 
-      case "b":            //if the button pushed is del.
-         total=0;
-         operacion=0;
-         numero=0;
-         centinela=0;
-         document.getElementById("result").value=total;
-      break;
+const performCalculation = {
+  '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
+  '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
+  '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
+  '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+  '=': (firstOperand, secondOperand) => secondOperand
+};
 
-      default:
-        /*transform the digits pushed in a number*/
-        if(numero===0){ //go into if it´s the firts digit.
-          document.getElementById("result").value=button;
-          numero = button; //the number begins with the firts digit.
-        }
-        else {//Go into after to push the firts digit.
-          document.getElementById("result").value+=button;
-          numero += button;//concatenate digits into the variable "numero"
-        }                  // 5+8+5 = 585
+function resetCalculator() {
+  calculator.displayValue = '0';
+  calculator.firstOperand = null;
+  calculator.waitingForSecondOperand = false;
+  calculator.operator = null;
+}
 
-    }
+function updateDisplay() {
+  const display = document.querySelector('.calculator-screen');
+  display.value = calculator.displayValue;
+}
 
+//updateDisplay();
 
-    function operaciones (a,b){
+const keys = document.querySelector('.calculator-keys');
+keys.addEventListener('click', (event) => {
+  const { target } = event;
+  if (!target.matches('button')) {
+    return;
+  }
 
-      if(operacion=="+"){//Apply the sum operation.
-        total=total+parseInt(numero);
-        document.getElementById("result").value=total;
-      }
-      else if(operacion=="-"){//Apply the subtract operation.
-        total=total-parseInt(numero);
-        document.getElementById("result").value=total;
-        }
-        else if(operacion=="*"){//Apply the multiplication operation.
-          if(numero!=0){
-              total=total*parseInt(numero);
-          }
-          document.getElementById("result").value=total;
-        }
-        else if(operacion=="/"){//Apply the division operation.
-          if(numero!=0){
-             total=total/parseInt(numero);
-          }
-          document.getElementById("result").value=total;
-        }
+  if (target.classList.contains('operator')) {
+    handleOperator(target.value);
+		updateDisplay();
+    return;
+  }
 
-          if(centinela === 0) {//go into if it´s the firts digit.
-            total=parseInt(numero);//start the total value with the firts number.
-            centinela=1; //it´s not the firt digit.
-          }
+  if (target.classList.contains('decimal')) {
+    inputDecimal(target.value);
+		updateDisplay();
+    return;
+  }
 
-    }
+  if (target.classList.contains('all-clear')) {
+    resetCalculator();
+		updateDisplay();
+    return;
+  }
 
-
-  }); //end to addeventlistener
-
-};  // end to windows.load
+  inputDigit(target.value);
+  updateDisplay();
+});

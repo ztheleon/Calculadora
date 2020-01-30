@@ -4,10 +4,10 @@ Repo de prueba curso Git. Calculadora creada en HTML, CSS y JS (Versión 0.1) y 
 Tag:V01 presenta el siguiente Bug el cual se corrige en el tag:v0.2:
 
 Operación
-22 + 22 + 22 + si en vez de un número digito nuevamente " + " = 66  OK 
-99 – 25 – 25 - si en vez de un número digito nuevamente " - " = 49   OK
-99 * 5 * 4 * si en vez de un número digito nuevamente " * " = 0 ERROR 
-25 / 6 / 7 / si en vez de un número digito nuevamente " / "  = blank ERROR
+22 + 22 + 22 + si en vez de un número digito nuevamente " + " = 66  OK<br/>
+99 – 25 – 25 - si en vez de un número digito nuevamente " - " = 49   OK<br/>
+99 * 5 * 4 * si en vez de un número digito nuevamente " * " = 0 ERROR<br/> 
+25 / 6 / 7 / si en vez de un número digito nuevamente " / "  = blank ERROR<br/>
 
 Develop_1.0:
 Se modifica el archivo CSS. (Uso de CSS Grid en la vista del resultado).

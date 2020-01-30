@@ -9,12 +9,12 @@ Operación
 99 * 5 * 4 * si en vez de un número digito nuevamente " * " = 0 ERROR<br/> 
 25 / 6 / 7 / si en vez de un número digito nuevamente " / "  = blank ERROR<br/>
 
-Develop_1.0:
-Se modifica el archivo CSS. (Uso de CSS Grid en la vista del resultado).
-Develop_1.1:
-Se modifica el archivo CSS. (Uso de CSS Grid en las teclas de numeros y operaciones).
-Develop_1.3:
-Se modifica el archivo CSS y JS. (Uso de CSS Grid en el fondo de la calculadora).
+Develop_1.0:<br/>
+Se modifica el archivo CSS. (Uso de CSS Grid en la vista del resultado).<br/>
+Develop_1.1:<br/>
+Se modifica el archivo CSS. (Uso de CSS Grid en las teclas de numeros y operaciones).<br/>
+Develop_1.3:<br/>
+Se modifica el archivo CSS y JS. (Uso de CSS Grid en el fondo de la calculadora).<br/>
 
 ![alt text](https://github.com/ztheleon/Calculadora/blob/master/Git_develop1.png)
 

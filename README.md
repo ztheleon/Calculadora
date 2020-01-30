@@ -18,3 +18,5 @@ Se modifica el archivo CSS y JS. (Uso de CSS Grid en el fondo de la calculadora)
 
 ![alt text](https://github.com/ztheleon/Calculadora/blob/master/Git_develop1.png)
 
+![alt text](https://github.com/ztheleon/Calculadora/blob/master/Git_develop2.png)
+
